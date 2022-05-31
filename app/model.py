@@ -1,3 +1,5 @@
+import firebase_admin
+from firebase_admin import credentials, firestore
 import numpy as np
 import pandas as pd
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
@@ -18,3 +20,13 @@ def model_builder() -> ExponentialSmoothing:
 
 
 forecaster = model_builder()
+
+# init firestore connection
+cred = credentials.Certificate("configs/app_creds.json")
+firebase_admin.initialize_app(cred,
+    {
+        "databaseURL": "https://save-nyc-demo.firebaseio.com/"
+    }
+)
+
+db = firestore.client()
