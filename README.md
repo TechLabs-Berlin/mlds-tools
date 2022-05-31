@@ -65,7 +65,7 @@ And that should deploy your application. Fetch the URL from the logs/terminal ou
 5. The "save-nyc-demo"  button will l;et you generate a credentials file. Download and move the credentials file under `configs`
 6. Navigate to [Firestore](https://console.firebase.google.com/u/0/project/save-nyc-demo/firestore) and Create a database.
     - When prompted select "Start in **test mode**"
-    - The Cloud Location of the DB is arbitrary.
+    - The Cloud Location of the DB is arbitrary
 
 #### Install `firebase-admin`
 Once again, if you have setup the project correctly, you shoul already have this package. Else:
