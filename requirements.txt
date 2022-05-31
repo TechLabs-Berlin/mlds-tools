@@ -11,7 +11,7 @@ python-dateutil==2.8.2
 pytz==2022.1
 PyYAML==6.0
 scipy==1.8.0
-statsmodels==0.11.0
+statsmodels==0.13.2
 traitlets==5.2
 Werkzeug==2.1.2
 zipp==3.8.0
