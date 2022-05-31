@@ -50,7 +50,7 @@ This will alow you to auythenticate your account via a browser window so that th
 #### Deploying to Heroku
 1. Create a new app using the Heroku dashboard.
 2. Go to your application code repo and set up anew remote to your newly created repo `test-app`:
-    > heroku git:remote -a test-app
+    > heroku git:remote -a save-nyc-demo
 3. Now simply, push your application code from the `main` branch to this remote:
     > git push heroku main
 
