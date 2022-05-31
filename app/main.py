@@ -5,7 +5,6 @@ from model import forecaster, pd, db
 app = Flask(__name__)
 
 
-@app.route('/')
 def predict_static():
     # read static timesheets
     df = pd.read_csv("data/superhero_timesheets.csv")
@@ -25,6 +24,7 @@ def predict_static():
     return f"<h3>Hello, NYC is {screwed_perc}% screwed today!</h3><br/>{actives} are on the job."
 
 
+@app.route('/')
 def predict_backend():
     pred = forecaster.forecast(steps=1).astype(int).iloc[0]
     print(pred)
