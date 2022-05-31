@@ -11,12 +11,12 @@ def model_builder() -> ExponentialSmoothing:
         ExponentialSmoothing: A trained runnable model to be used for forecasting
     """
     df = pd.read_csv("data/nyc_crisis_may.csv")
-    return df.sort_values("date")
+    df.sort_values("date", inplace=True)
 
-    # return ExponentialSmoothing(
-    #     df.crisis,
-    #     seasonal_periods=7,
-    # ).fit()
+    return ExponentialSmoothing(
+        df.crisis,
+        seasonal_periods=7,
+    ).fit()
 
 
 forecaster = model_builder()

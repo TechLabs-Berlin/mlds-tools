@@ -11,10 +11,10 @@ def predict_static():
     df = pd.read_csv("data/superhero_timesheets.csv")
     df["date"] = pd.to_datetime(df["date"])
 
-    today = pd.Timestamp.now().floor("D")
-    pred = forecaster[forecaster.date < str(today)].tail(3).crisis.median()
+    pred = forecaster.forecast(steps=1).astype(int).iloc[0]
     print(pred)
 
+    today = pd.Timestamp.now().floor("D")
     roster = df[df.date >= today].reset_index()
     actives = ", ".join(roster[roster.active_on_duty == 1].superhero.unique().tolist())
     n_result = roster.active_on_duty.sum()
