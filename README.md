@@ -68,7 +68,7 @@ And that should deploy your application. Fetch the URL from the logs/terminal ou
     - The Cloud Location of the DB is arbitrary
 
 #### Install `firebase-admin`
-Once again, if you have setup the project correctly, you shoul already have this package. Else:
+Once again, if you have setup the project correctly, you should already have this package. Else:
 > pip3 install firebase-admin
 
 #### Learning to work with `firebase`
