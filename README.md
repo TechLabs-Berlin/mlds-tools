@@ -9,7 +9,8 @@ To install all dependencies use [pip](https://pip.pypa.io/en/stable/) to read al
 To partipate and navigate through all notebooks that were part of the this TechLabs Berlin Workhop Weekend ST22 talk, go through the items in the following order:
 1. Go through the [Hero Data Mocking Workshop](binder/workshop_weekend_st22/01-data_mocking.ipynb)
 2. Go through the next sections on [Flask](#Flask) and [Heroku](#Heroku) where we wrap the model in to a Flask application and serve it on Heroku
-3. Finally, learn how to attach a DB back-end to your service with FireBase.
+3. See [Setup](#Firebase) guide for Firebase
+3. Finally, learn how to attach a [DB back-end to your service with FireBase](binder/workshop_weekend_st22/03-working_with_firebase.ipynb)
 ### Past Workshop Weekends
 #### Fake it, till you make it: Prototyping for Data Projects (ST21)
 - Contains `streamlit` code used in workshop demonstration
@@ -54,3 +55,21 @@ This will alow you to auythenticate your account via a browser window so that th
     > git push heroku main
 
 And that should deploy your application. Fetch the URL from the logs/terminal output on deploy.
+
+## Firebase
+#### Setup
+1. Sign-up for a [Firebase](firebase.google.com) account
+2. On your [dashboard](https://console.firebase.google.com/), Add a project.
+3. Follow the setup flow to name your project `save-nyc-demo`
+4. You will need application credentials to work with app, this can be generated from your [admin console](https://console.firebase.google.com/project/save-nyc-demo/settings/serviceaccounts/adminsdk)
+5. The "save-nyc-demo"  button will l;et you generate a credentials file. Download and move the credentials file under `configs`
+
+#### Install `firebase-admin`
+Once again, if you have setup the project correctly, you shoul already have this package. Else:
+> pip3 install firebase-admin
+
+#### Learning to work with `firebase`
+The last section of the workshop talk can be followed [here](binder/workshop_weekend_st22/03-working_with_firebase.ipynb).
+
+## Conclusion
+That should be everything you need in order to complete the workshop. Happy learning!
