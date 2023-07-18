@@ -45,11 +45,11 @@ Windows Users and other OS are supported and [documentation](https://devcenter.h
 After you install the CLI, run the `heroku login` command.
 > heroku login
 
-This will alow you to auythenticate your account via a browser window so that the CLI can store your credentials. Yoou are now setup to work with the Heroku CLI.
+This will alow you to authenticate your account via a browser window so that the CLI can store your credentials. Yoou are now setup to work with the Heroku CLI.
 
 #### Deploying to Heroku
 1. Create a new app using the Heroku dashboard.
-2. Go to your application code repo and set up anew remote to your newly created repo `test-app`:
+2. Go to your application code repo and set up a new remote to your newly created repo `test-app`:
     > heroku git:remote -a save-nyc-demo
 3. Now simply, push your application code from the `main` branch to this remote:
     > git push heroku main
@@ -62,7 +62,7 @@ And that should deploy your application. Fetch the URL from the logs/terminal ou
 2. On your [dashboard](https://console.firebase.google.com/), Add a project.
 3. Follow the setup flow to name your project `save-nyc-demo`
 4. You will need application credentials to work with app, this can be generated from your [admin console](https://console.firebase.google.com/project/save-nyc-demo/settings/serviceaccounts/adminsdk)
-5. The "save-nyc-demo"  button will l;et you generate a credentials file. Download and move the credentials file under `configs`
+5. The "Generate new private key"  button will let you generate a credentials file. Download and move the credentials file under `configs`
 6. Navigate to [Firestore](https://console.firebase.google.com/u/0/project/save-nyc-demo/firestore) and Create a database.
     - When prompted select "Start in **test mode**"
     - The Cloud Location of the DB is arbitrary
