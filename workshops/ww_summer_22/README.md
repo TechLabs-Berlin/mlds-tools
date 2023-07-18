@@ -1,5 +1,3 @@
-# mlds-tools
-A Collection of helpful resources for ML &amp; DS projects.
 ## Getting Started
 To install all dependencies use [pip](https://pip.pypa.io/en/stable/) to read all packages from `requirements.txt` with the command:
 > pip3 install -r requirements.txt
