@@ -1,0 +1,2 @@
+### Instructions
+Place all your configs in this folder. They will not be pushed to github and can only be modified locally. For an example on how to do this, see the data back-ends workshop [here](../README.md#firebase)
