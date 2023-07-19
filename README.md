@@ -13,6 +13,7 @@ To install all dependencies use [pip](https://pip.pypa.io/en/stable/) to read al
 > pip3 install -r requirements.txt
 
 ## Navigating the Workshop
+> Here we will add instructions for workshop preparation. All pre-requisites hosuld be listed with links to installation instructions. Docker (including virtualbox), PSQL & Heroku.
 ## Heroku
 [Heroku](https://dashboard.heroku.com/apps) is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud. It is one of the platforms of choice to deploy small, simple apps on a quick tier. We will be using it as part of this workshop to deploy our application to the cloud and make it available to anyone over the internet.
 
