@@ -1,0 +1,2 @@
+FROM postgres:alpine
+ENV POSTGRES_PASSWORD docker
