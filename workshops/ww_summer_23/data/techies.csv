@@ -1,0 +1,11 @@
+name,techie_id,track,highest_education,age,returning_techie
+Spiderman,5000,WD,High School,30,False
+Black Widow,5001,UX,High School,56,True
+Wolverine,5002,DL,Masters,58,True
+Dr Strange,5003,UX,High School,65,True
+Dr X,5004,DL,Masters,87,False
+Invisible Girl,5005,DL,High School,65,True
+Scarlet Witch,5006,WD,Masters,41,False
+The Thing,5007,DS,High School,78,False
+Captain America,5008,UX,PhD,71,True
+Storm,5009,WD,High School,63,False
