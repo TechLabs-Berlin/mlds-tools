@@ -1,4 +1,6 @@
 ## Navigating the Workshop
+Links and resources used in this workshop:
+- [How to import csv into Docker Postgresql database](https://sherryhsu.medium.com/how-to-import-csv-into-docker-postgresql-database-22d56e2a1117)
 ### Heroku
 [Heroku](https://dashboard.heroku.com/apps) is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud. It is one of the platforms of choice to deploy small, simple apps on a quick tier. We will be using it as part of this workshop to deploy our application to the cloud and make it available to anyone over the internet.
 
