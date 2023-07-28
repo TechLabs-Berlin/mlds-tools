@@ -6,7 +6,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    print(os.listdir())
     return render_template('index.html')
 
 
