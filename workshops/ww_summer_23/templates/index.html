@@ -6,12 +6,13 @@
     <title>SQL Runner</title>
 </head>
 <body>
-    <h1>This is a Flask App containerised with Docker to run SQL code against your very own PostgresDB</h1>
-    <!-- <form method="GET">
+    <h3>This is a Flask App containerised with Docker to run SQL code against your very own PostgresDB</h1>
+    <form method="POST">
         <p>Please type your query below:</p>
-        <input name="phone_number" type="number">
+        <input name="query" type="string">
         <br><br>
         <input type="submit">
-    </form> -->
+    </form>
+    {% block content %}{% endblock %}
 </body>
 </html>
