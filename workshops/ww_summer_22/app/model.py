@@ -13,6 +13,8 @@ def model_builder() -> ExponentialSmoothing:
     df = pd.read_csv("data/nyc_crisis_may.csv")
     return df.sort_values("date")
 
+
+
     # return ExponentialSmoothing(
     #     df.crisis,
     #     seasonal_periods=7,
