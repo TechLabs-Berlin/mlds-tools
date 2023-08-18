@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block content %}
+{% if run_text %}
+    <div class="container">
+        <h4>{run_text}</h4>
+    </div>
+{% else %}
+    <div class="container">
+        <h4>something went wrong</h4>
+    </div>
+{% endif %}
+{% endblock %}

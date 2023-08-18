@@ -1,5 +1,9 @@
 *.DS_Store
 .history
 *.ipynb_checkpoints*
-*/__pycache__/*
-# configs/*.json
+
+# excludes cached py files
+**/__pycache__/*
+
+# excludes configs from being committed
+**/configs/*.json
