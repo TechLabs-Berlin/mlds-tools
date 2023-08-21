@@ -59,16 +59,15 @@ The tutorial will be conducted in our workshop on **Saturday, August 26th at 11 
 
 We look forward to hosting you all 🌈
 
-
-
-
-
-
 ## Appendix
+
 ### Past Workshop Weekends
+
 #### Quick Back-ends for Data Project MVPs (ST22)
+
 To partipate and navigate through all notebooks that were part of the this TechLabs Berlin Workhop, navigate and follow the instructions [here](workshops/ww_summer_22/README.md).
 
 #### Fake it, till you make it: Prototyping for Data Projects (ST21)
+
 - Contains `streamlit` code used in workshop demonstration
 - Simple "Hero" dashboard example
