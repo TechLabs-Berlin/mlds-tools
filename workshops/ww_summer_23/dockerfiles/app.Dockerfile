@@ -4,7 +4,7 @@ ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
 # install pip & python dependencies
-RUN pip3 install --no-cache --upgrade pip setuptools Flask
+RUN pip3 install --no-cache --upgrade pip setuptools Flask psycopg2-binary
 
 # create dirs and copy over sourcecode
 RUN mkdir -p /home/templates
