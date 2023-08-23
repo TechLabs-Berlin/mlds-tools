@@ -1,9 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% if run_text %}
+{% if records %}
     <div class="container">
-        <h4>{{ run_text }}</h4>
+        <h4>Results:</h4>
+        <table border="1" cellspacing="1" cellpadding="10px">
+            <tr>
+                {% for col in records[0] %}
+                    <th>{{ col }}</th>
+                {% endfor %}
+            </tr>
+        {% for row in records[1:] %}
+            <tr>
+            {% for col in row %}
+                <td>{{ col }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
     </div>
 {% else %}
     <div class="container">

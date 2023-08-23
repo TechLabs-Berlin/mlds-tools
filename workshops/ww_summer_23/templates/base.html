@@ -10,9 +10,11 @@
     <div class="query_runner">
         <form method="POST">
             <p>Please type your query below:</p>
-            <input name="query" type="string">
-            <br><br>
-            <input type="submit">
+            <textarea id="query" name="query" rows="5" cols="33"></textarea>
+            <br/><br/>
+            <input type="submit"/>
+            <button type="submit" name="listTables">List Tables</button>
+            <button type="submit" name="upload" formaction="/upload" formmethod="GET">Upload Table</button>
         </form>
     </div>
     <div class="content">

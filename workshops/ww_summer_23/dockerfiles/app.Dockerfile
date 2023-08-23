@@ -4,13 +4,13 @@ ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
 # install pip & python dependencies
-RUN pip3 install --no-cache --upgrade pip setuptools Flask psycopg2-binary
+RUN pip3 install --no-cache --upgrade pip setuptools Flask psycopg2-binary pandas sqlalchemy werkzeug
 
 # create dirs and copy over sourcecode
 RUN mkdir -p /home/templates
 COPY templates/ home/templates/
 COPY app/*.py home
-RUN ls /home/templates
+# RUN ls /home/templates
 
 # open port for accepting requests
 EXPOSE 5050
