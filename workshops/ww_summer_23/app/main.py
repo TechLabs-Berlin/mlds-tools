@@ -1,5 +1,7 @@
-from sqlalchemy import create_engine
+import os
+
 import pandas as pd
+from sqlalchemy import create_engine
 import streamlit as st
 from streamlit_option_menu import option_menu
 
@@ -25,7 +27,7 @@ if selected == "Run SQL":
     @st.cache_data
     def runner(query):
         # st.session_state.default_flag = True
-        engine = create_engine("postgresql+psycopg2://postgres:docker@demodb:5432/postgres")
+        engine = create_engine(os.environ["COCKROACH_URL"])
         data = pd.read_sql(query, con=engine)
         return data
 
@@ -39,7 +41,7 @@ if selected == "List Tables":
     st.subheader("Your Online SQL Runnner")
     st.header("Existing tables:")
 
-    engine = create_engine("postgresql+psycopg2://postgres:docker@demodb:5432/postgres")
+    engine = create_engine(os.environ["COCKROACH_URL"])
     data = pd.read_sql("SELECT tablename FROM pg_catalog.pg_tables WHERE schemaname='public'", con=engine)
     st.dataframe(data)
 
@@ -54,6 +56,6 @@ if selected == "Upload Table":
         df = pd.read_csv(uploaded_file, sep=",")
         if st.button(label="Add Table"):
             table_name = uploaded_file.name.split(".")[0]
-            engine = create_engine("postgresql+psycopg2://postgres:docker@demodb:5432/postgres")
+            engine = create_engine(os.environ["COCKROACH_URL"])
             df.to_sql(table_name, con=engine, if_exists="fail", index=False)
             st.write(f":green[Created table **{table_name}** with {len(df)} records]")
