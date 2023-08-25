@@ -18,8 +18,6 @@ def home():
 
     # get the form data
     run_text = request.form['query']
-    if not run_text:
-        run_text = "SELECT tablename FROM pg_catalog.pg_tables WHERE schemaname='public'"
     try:
         # Connect to an existing database
         connection = connect(
@@ -51,39 +49,6 @@ def home():
 
     return render_template('results.html', records=records)
 
-
-@app.route('/upload', methods=['GET', 'POST'])
-def upload():
-    if request.method == 'POST':
-    # check if the post request has the file part
-        if 'file' not in request.files:
-            flash('No file part')
-            return redirect(request.url)
-        file = request.files['file']
-        # If the user does not select a file, the browser submits an
-        # empty file without a filename.
-        if file.filename == '':
-            flash('No selected file')
-            return redirect(request.url)
-        file_table, file_ext = file.filename.split(".")
-        if file_ext.lower() in ALLOWED_EXTENSIONS:
-            filename = secure_filename(file.filename)
-            file.save(filename)
-
-            df = pd.read_csv(filename, sep=",")
-            print(df)
-            engine = create_engine('postgresql+psycopg2://postgres:docker@demodb:5432/postgres')
-            df.to_sql(file_table, con=engine, if_exists='fail', index=False)
-            return redirect('/')
-    return '''
-    <!doctype html>
-    <title>Upload Table</title>
-    <h1>Upload new CSV File</h1>
-    <form method="POST" enctype=multipart/form-data>
-      <input type=file name="file"><br/><br/>
-      <input type=submit value="Upload">
-    </form>
-    '''
 
 
 if __name__ == "__main__":

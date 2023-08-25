@@ -5,6 +5,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 
 # install pip & python dependencies
 RUN pip3 install --no-cache --upgrade \
+    flask \
     pandas \
     pip \
     psycopg2-binary \
