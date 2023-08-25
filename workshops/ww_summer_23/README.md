@@ -103,7 +103,7 @@ A document that specifies the target that you want to build. Interacting with Do
 
 #### Creating a Dockerfile
 
-In our project repo, let's create a file and simply name it `Dockerfile`. Now add the following contents to the file and save it:
+In our current work directory, let's create a file and simply name it `Dockerfile`. Now add the following contents to the file and save it:
 
 ```docker
 FROM postgres:alpine
@@ -115,10 +115,10 @@ That's it! Before we take a moment to understand what's really happening in this
 #### Some basic Docker commands
 
 To build an image from the Dockerfile you just defined, use the following command:
-> docker build -t postgresdb ./
+> $ docker build -t postgresdb ./
 
 Once the image is built, use the run command to actually run your a fresh docker container using the image you just built.
-> docker run --name demodb -p 5432:5432 postgresdb
+> $ docker run --name demodb -p 5432:5432 postgresdb
 
 Now we can start to understand the effect of these commands:
 
@@ -128,8 +128,11 @@ Now we can start to understand the effect of these commands:
 
 #### Using `psql` to connect to DB
 
-As earlier mentioned, we will be using a CLI tool to connect to our local running database instance. Assuming that you have `postrgesql` and the necessary setup for the same you should be able to connect to our DB with `psql` using the following syntax:
-> psql -d postgres -U postgres -h localhost
+As earlier mentioned, we will be using a CLI tool to connect to our local running database instance. First restart the database instance, this time with an extra option `-d` (to allow it run in a detached mode).
+> $ docker run -d --name demodb -p 5432:5432 postgresdb
+
+Assuming that you have `postrgesql` and the necessary setup for the same you should be able to connect to our DB with `psql` using the following syntax:
+> $ psql -d postgres -U postgres -h localhost
 
 Entering the password **docker** at prompt will result in a successful connection!
 
@@ -154,21 +157,30 @@ Build:
 > $ docker build -t postgresdb ./
 
 Run:
-> $ docker run -d --name demodb -p 5432:5432 --network OSRNetwork postgresdb
+> $ docker run -d --name demodb -p 5432:5432 postgresdb
 
  _**Note:** notice we added an extra option to our command, `-d`_
 
 At this point, you should receive an error when you try to run. It will complain about the container already existing. This is from our previous run. We will want to remove this container.
 
+To kill al running containers:
+> $ docker kill $(docker ps -q)
+
 Remove all idle containers:
 > $ docker rm \$(docker ps -a -q)
+
+After makes these fixes, simply attempt to run the container again:
+> $ docker run -d --name demodb -p 5432:5432 postgresdb
+
+You can once again connect to our database, now you will finally start to see some tables:
+> $ psql -d postgres -U postgres -h localhost
 
 #### Summary
 
 Now in this short section of exercises:
 
-- We've learnt how to build images, run and connect to docker conatiners
-- We've understood the base `postgresdb` image and how to madd data to a running DB
+- We've learnt how to build images, run and connect to docker containers
+- We've understood the base `postgresdb` image and how to add data to a running DB
 - Connect and mange data with CLI tools!
 
 You can find a cheatsheet reference like the one [this](https://dockerlabs.collabnix.com/docker/cheatsheet/), to collect all useful commands in one place!
@@ -182,10 +194,10 @@ In this section we will focus on illustrating how armed with the limited knowled
 Popular pythonic service to setup an easy web server. In this section of this tutorial, we will focus on how Docker can be used as re-producible environment for local development and testing. We will build a browser-based interface to query our previously defined database.
 
 Simply spin up the predefined Dockerfile we have provided for this purpose:
-> docker build -f dockerfiles/app.Dockerfile -t webapp . --no-cache
+> $ docker build -f dockerfiles/app.Dockerfile -t webapp . --no-cache
 
 And now run the container:
-> docker run --name sqlrunner -p 5050:5050 webapp
+> $ docker run --name sqlrunner -p 5050:5050 webapp
 
 #### Oh, oh! Our first major issue
 
@@ -199,7 +211,7 @@ Then simply re-run our containers specifying the network it now belongs to. Firs
 > $ docker run -d --name demodb -p 5432:5432 --network OSRNetwork postgresdb
 
 And then with the Flask container:
-> docker run --name sqlrunner -p 5050:5050 --network OSRNetwork webapp
+> $ docker run --name sqlrunner -p 5050:5050 --network OSRNetwork webapp
 
 This time, everything should work as per plan.
 
@@ -234,7 +246,7 @@ Simply repeat the steps to add the upload table feature as well Add the followin
 
 ```<button type="submit" name="upload" formaction="/upload" formmethod="GET">Upload Table</button>```
 
-Similarly in the file `app/run.py` add a new method after line 51.
+Similarly in the file `app/run.py` add a new method after line 50.
 
 ```python
 @app.route('/upload', methods=['GET', 'POST'])
@@ -295,7 +307,7 @@ To build:
 > $ docker build -f dockerfiles/streamlit.Dockerfile -t streamlit . --no-cache
 
 To run:
-> docker run --name graphicosr -p 8501:8501 --network OSRNetwork streamlit
+> $ docker run --name graphicosr -p 8501:8501 --network OSRNetwork streamlit
 
 Take some time to check out all the features we've added in the form of our newly dockerized streamlit app.
 
@@ -312,14 +324,14 @@ engine = create_engine(os.environ["COCKROACH_URL"])
 
 The entire line can simply be substituted.
 
-Additionally, there are a few commented lines in our `app/streamlit.Dockerfile`. Simply uncomment lines 26 - 28, this will allow a certificate for connecting to Cockroach Cloud to be generated locally in your target Docker image.
+Additionally, there are a few commented lines in our `dockerfiles/streamlit.Dockerfile`. Simply uncomment lines 26 - 28, this will allow a certificate for connecting to Cockroach Cloud to be generated locally in your target Docker image.
 
 Repeat build and run steps to watch your changes in action.
 
 Build:
 > $ docker build -f dockerfiles/streamlit.Dockerfile -t streamlit . --no-cache
 
-_**Note:** For sake of security we are not displaying the full correct connection string here. Never connection details like passwords to your repository. Replace all parameters passed in environmental variable with correct values._
+_**Note:** For sake of security we are not displaying the full correct connection string here. Never commit connection details like passwords to your repository. Replace all parameters passed in environmental variable with correct values._
 
 Run:
 > $ docker run --name graphicosr -p 8501:8501 -e COCKROACH_URL="cockroachdb://postgres:{password}@{host}/defaultdb?sslmode=verify-full" streamlit
