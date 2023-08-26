@@ -349,3 +349,11 @@ That brings us to the end our tutorial section.
 > _For the last part of our workshop we will talk about some production usecases, pros and cons of Docker and some best practices that you can already start to apply._
 
 You can find a summary of the content in our [outro slides](outro_slides.pdf).
+
+## Beyond this workshop
+
+Shout out to [docker for beginners](https://docker-curriculum.com/) by [Prakhar Srivastav](https://prakhar.me/) which is a great one stop tutorial for all things Docker and certainly takes the intro-level skills illustrated here to the next level!
+
+The Docker official site also hosts some great [Hands-on Docker Tutorials for Developers](https://www.docker.com/play-with-docker/).
+
+Lastly, if you prefer more interactive learning, we would recommend checking out [Play with Docker](https://labs.play-with-docker.com/). A project built by some external developers, that impressed Docker so much they decided to sponsor it, Play with Docker (PWD) aims to offer a simple, interactive and fun playground to learn Docker.
