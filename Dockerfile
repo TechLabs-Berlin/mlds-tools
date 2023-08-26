@@ -7,9 +7,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 RUN pip3 install --no-cache --upgrade \
     flask \
     pip \
-    psycopg2-binary \
-    sqlalchemy \
-    werkzeug
+    psycopg2-binary
 
 # create dirs and copy over sourcecode
 RUN mkdir -p /home/templates

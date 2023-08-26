@@ -1,10 +1,7 @@
 import os
 
-from sqlalchemy import create_engine
-from flask import Flask, flash, render_template, request, redirect
-import pandas as pd
+from flask import Flask, render_template, request
 from psycopg2 import connect, Error
-from werkzeug.utils import secure_filename
 
 ALLOWED_EXTENSIONS = {"csv"}
 
