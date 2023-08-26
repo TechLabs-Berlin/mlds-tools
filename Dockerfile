@@ -13,7 +13,7 @@ RUN pip3 install --no-cache --upgrade \
 # create dirs and copy over sourcecode
 RUN mkdir -p /home/templates
 COPY templates/ home/templates/
-COPY app/*.py home
+COPY run.py home
 
 # open port for accepting requests
 EXPOSE 5050
