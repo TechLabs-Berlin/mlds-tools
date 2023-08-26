@@ -12,7 +12,7 @@ RUN pip3 install --no-cache --upgrade \
 
 # create dirs and copy over sourcecode
 RUN mkdir -p /home/templates
-COPY templates/ home/templates/
+COPY workshops/ww_summer_23/templates/ home/templates/
 COPY run.py home
 
 # open port for accepting requests
