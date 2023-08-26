@@ -6,9 +6,9 @@ The prime purpose of this repository is to house code that is often re-used in c
 
 Additionally, some of the tools and templates introduced in the workshops have been made in to re-usable components such as:
 
-- A docker image to host a self-contained SQL Runner sandox environment
+- A docker image to host a self-contained SQL Runner sandbox environment
 - Application and helper code (with examples) to run simple flask server, streamlit apps
-- Notebook to demonstarte advanced data manipulation and handling, inluding generation of synthetic data datasets!
+- Notebook to demonstrate advanced data manipulation and handling, including generation of synthetic data datasets!
 
 ## Preparing for the Workshop
 
@@ -65,7 +65,7 @@ We look forward to hosting you all 🌈
 
 #### Quick Back-ends for Data Project MVPs (ST22)
 
-To partipate and navigate through all notebooks that were part of the this TechLabs Berlin Workhop, navigate and follow the instructions [here](workshops/ww_summer_22/README.md).
+To participate and navigate through all notebooks that were part of the this TechLabs Berlin Workshop, navigate and follow the instructions [here](workshops/ww_summer_22/README.md).
 
 #### Fake it, till you make it: Prototyping for Data Projects (ST21)
 

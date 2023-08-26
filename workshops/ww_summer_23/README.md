@@ -357,3 +357,5 @@ Shout out to [docker for beginners](https://docker-curriculum.com/) by [Prakhar 
 The Docker official site also hosts some great [Hands-on Docker Tutorials for Developers](https://www.docker.com/play-with-docker/).
 
 Lastly, if you prefer more interactive learning, we would recommend checking out [Play with Docker](https://labs.play-with-docker.com/). A project built by some external developers, that impressed Docker so much they decided to sponsor it, Play with Docker (PWD) aims to offer a simple, interactive and fun playground to learn Docker.
+
+When you finally start to get comfortable with Docker maybe it's time to graduate on to [Docker Compose](https://docs.docker.com/compose/) 🚀🤘
