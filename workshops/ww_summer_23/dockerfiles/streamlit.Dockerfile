@@ -14,9 +14,7 @@ RUN pip3 install --no-cache --upgrade \
     streamlit_option_menu \
     werkzeug
 
-# create dirs and copy over sourcecode
-RUN mkdir -p /home/templates
-COPY templates/ home/templates/
+# copy over sourcecode
 COPY app/*.py home
 
 # open port for accepting requests
