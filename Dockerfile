@@ -8,6 +8,7 @@ RUN pip3 install --no-cache --upgrade \
     flask \
     pip \
     psycopg2-binary \
+    sqlalchemy \
     werkzeug
 
 # create dirs and copy over sourcecode
