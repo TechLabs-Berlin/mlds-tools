@@ -16,6 +16,8 @@ This preparation guide is a supporting document for the talk **"An Intro to Cont
 
 Kindly complete these steps prior to attending the workshop! ❤️️
 
+The content of the tutorial can be accessed [here](workshops/ww_summer_23/README.md).
+
 ### Docker
 
 As the title suggests, Docker is our tool of choice for this workshop. It is an open platform that enables development, shipping and productionization of application code in a containerized manner. More about Docker will be covered in our workshop.
