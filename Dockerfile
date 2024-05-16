@@ -15,7 +15,7 @@ RUN pip3 install --no-cache --upgrade \
     werkzeug
 
 # copy over sourcecode
-COPY app/*.py home
+COPY demo.py home
 
 # open port for accepting requests
 EXPOSE 8501
